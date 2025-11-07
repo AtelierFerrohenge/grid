@@ -13,11 +13,11 @@ public partial class Grid : Node
 		AddChild(proto);
 	}
 
-	public void DeleteTileMap(Godot.Vector2I position)
+	public void DeleteTileMap(Vector2I position)
 	{
 	}
 
-	private string TranslateToChunkName(Godot.Vector2I position)
+	private string TranslateToChunkName(Vector2I position)
 	{
 		return $"{position.X}_{position.Y}";
 	}
