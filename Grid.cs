@@ -1,9 +1,11 @@
 using Godot;
 using System;
 
-[GlobalClass]
-public partial class Grid : Node
+public abstract partial class Grid : Node
 {
+	protected abstract Vector2I ChunkBasisX { get; }
+	protected abstract Vector2I ChunkBasisY { get; }
+	
 	// Plan to add 3D support too
 	// Add actual tile maps later, for now just make a blank one
 	public void AddTileMap(Vector2I position)
@@ -15,6 +17,7 @@ public partial class Grid : Node
 
 	public void DeleteTileMap(Vector2I position)
 	{
+		GetNode(TranslateToChunkName(position)).QueueFree();
 	}
 
 	private string TranslateToChunkName(Vector2I position)
