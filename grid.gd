@@ -6,17 +6,17 @@ var chunk_basis_x: Vector2i
 var chunk_basis_y: Vector2i
 
 
-func add_chunk(chunk: TileMapLayer, position: Vector2i) -> void:
-	chunk.name = StringName(_position_to_name(position))
+func add_chunk(chunk: TileMapLayer, chunk_position: Vector2i) -> void:
+	chunk.name = StringName(_position_to_name(chunk_position))
 	add_child(chunk)
 
 
-func delete_chunk(position: Vector2i) -> void:
-	get_node(NodePath(_position_to_name(position))).queue_free()
+func delete_chunk(chunk_position: Vector2i) -> void:
+	get_node(NodePath(_position_to_name(chunk_position))).queue_free()
 
 
-func _position_to_name(position: Vector2i) -> String:
-	return "(%d, %d)" % [position.x, position.y]
+func _position_to_name(chunk_position: Vector2i) -> String:
+	return "(%d, %d)" % [chunk_position.x, chunk_position.y]
 
 
 func _ready():
