@@ -2,7 +2,7 @@ class_name MonoGrid
 extends Grid
 
 
-func add_chunk(chunk: TileMapLayer, chunk_position: Vector2i) -> void:
+func add_chunk(chunk: Node2D, chunk_position: Vector2i) -> void:
 	assert(chunk_position == Vector2i.ZERO, "Chunking should not be used in MonoGrid.")
 	super(chunk, chunk_position)
 
@@ -12,11 +12,11 @@ func remove_chunk(chunk_position: Vector2i) -> void:
 	super(chunk_position)
 
 
-func set_map(map: TileMapLayer) -> void:
+func set_tile_map(map: Node2D) -> void:
 	add_chunk(map, Vector2i.ZERO)
 
 
-func unset_map() -> void:
+func unset_tile_map() -> void:
 	remove_chunk(Vector2i.ZERO)
 
 

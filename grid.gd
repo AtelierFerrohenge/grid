@@ -1,9 +1,10 @@
 @abstract
 class_name Grid
+# Assume 2D for now, may want to extend for 3D in the future
 extends Node2D
 
 
-func add_chunk(chunk: TileMapLayer, chunk_position: Vector2i) -> void:
+func add_chunk(chunk: Node2D, chunk_position: Vector2i) -> void:
 	var chunk_name: String = _position_to_name(chunk_position)
 	assert(not has_node(NodePath(chunk_name)), "A chunk already exists at this position.")
 	chunk.name = StringName(chunk_name)
