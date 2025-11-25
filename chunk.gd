@@ -1,5 +1,5 @@
 @abstract
-class_name GridChunk
+class_name Chunk
 extends Node2D
 
 
