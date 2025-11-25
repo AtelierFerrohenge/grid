@@ -4,7 +4,7 @@ class_name Grid
 extends Node2D
 
 
-func add_chunk(chunk: Node2D, chunk_position: Vector2i) -> void:
+func add_chunk(chunk: GridChunk, chunk_position: Vector2i) -> void:
 	var chunk_name: String = _position_to_name(chunk_position)
 	assert(not has_node(NodePath(chunk_name)), "A chunk already exists at this position.")
 	chunk.name = StringName(chunk_name)
