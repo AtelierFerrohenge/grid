@@ -4,6 +4,9 @@ class_name Grid
 extends Node2D
 
 
+@abstract func map_to_local(map_position: Vector2i) -> Vector2
+
+
 func add_chunk(chunk: Chunk, chunk_position: Vector2i) -> void:
 	var chunk_name: String = _position_to_name(chunk_position)
 	assert(not has_node(NodePath(chunk_name)), "A chunk already exists at this position.")
@@ -11,10 +14,14 @@ func add_chunk(chunk: Chunk, chunk_position: Vector2i) -> void:
 	add_child(chunk)
 
 
-func remove_chunk(chunk_position: Vector2i) -> void:
+func get_chunk(chunk_position: Vector2i) -> Chunk:
 	var chunk_name: String = _position_to_name(chunk_position)
 	assert(has_node(NodePath(chunk_name)), "A chunk doesn't exist at this position.")
-	get_node(NodePath(chunk_name)).queue_free()
+	return get_node(NodePath(chunk_name))
+
+
+func remove_chunk(chunk_position: Vector2i) -> void:
+	get_chunk(chunk_position).queue_free()
 
 
 @abstract func _get_chunk_basis_x() -> Vector2i
