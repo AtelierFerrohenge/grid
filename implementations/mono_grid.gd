@@ -6,6 +6,10 @@ func map_to_local(map_position: Vector2i) -> Vector2:
 	return get_chunk(Vector2i.ZERO).map_to_local(map_position)
 
 
+func local_to_map(local_position: Vector2) -> Vector2i:
+	return get_chunk(Vector2i.ZERO).local_to_map(local_position)
+
+
 func add_chunk(chunk: Chunk, chunk_position: Vector2i) -> void:
 	assert(chunk_position == Vector2i.ZERO, "Chunking should not be used in MonoGrid.")
 	super(chunk, chunk_position)

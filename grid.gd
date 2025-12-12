@@ -7,6 +7,9 @@ extends Node2D
 @abstract func map_to_local(map_position: Vector2i) -> Vector2
 
 
+@abstract func local_to_map(local_position: Vector2) -> Vector2i
+
+
 func add_chunk(chunk: Chunk, chunk_position: Vector2i) -> void:
 	var chunk_name: String = _position_to_name(chunk_position)
 	assert(not has_node(NodePath(chunk_name)), "A chunk already exists at this position.")
