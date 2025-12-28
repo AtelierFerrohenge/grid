@@ -1,5 +1,5 @@
 @abstract
-class_name Chunk
+class_name ChunkOld
 extends Node2D
 
 
