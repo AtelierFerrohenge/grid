@@ -6,7 +6,9 @@
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
+// Review if I need chunk.h if grid.h already has it - style usage
 #include "chunk.h"
+#include "grid.h"
 
 using namespace godot;
 
@@ -17,6 +19,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
     }
     // Review why GDREGISTER_ABSTRACT_CLASS doesn't seem to work
     GDREGISTER_VIRTUAL_CLASS(Chunk);
+    GDREGISTER_VIRTUAL_CLASS(Grid);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

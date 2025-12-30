@@ -1,5 +1,5 @@
 @abstract
-class_name Grid
+class_name GridOld
 # Assume 2D for now, may want to extend for 3D in the future
 extends Node2D
 
