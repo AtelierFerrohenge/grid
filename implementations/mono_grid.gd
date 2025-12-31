@@ -2,11 +2,11 @@ class_name MonoGrid
 extends Grid
 
 
-func map_to_local(map_position: Vector2i) -> Vector2:
+func _map_to_local(map_position: Vector2i) -> Vector2:
 	return get_chunk(Vector2i.ZERO).map_to_local(map_position)
 
 
-func local_to_map(local_position: Vector2) -> Vector2i:
+func _local_to_map(local_position: Vector2) -> Vector2i:
 	return get_chunk(Vector2i.ZERO).local_to_map(local_position)
 
 
